@@ -1,34 +1,51 @@
+#Isaac's Guessing Game 1.0 built with Python
+#Built 10/20/2016
+
 import random
 import sys
+import time
 
-enter = ("Please Press Enter To Continue...")
+enter =  ("Please press enter to continue...")
 
-print ("Hello! Welcome to a Guessing game!")
-print ("Please Guess A number between 1 - 3")
-computernum = random.randint (1,3)
-Guess1 = input ("My First Guess Is: ")
+close = ("You may now close the game.")
+
+
+print ("Hello, welcome to a guessing game!")
+print ("Guess a number between 1 - 100.")
+
+computernum = random.randint(1,100)
+
+Guess1 = input("My first guess is: ")
 if Guess1 == computernum:
-    print ("You Win!")
+    print ("YOU WIN!")
     input (enter)
-    ("SystemExit")
+    sys.exit(0)
+
 else:
     print ("Sorry, try again!")
-    print ("You Have 2 Guesses Remaining!")
-    Guess2 = input ("My Second Guess Is: ")
+
+Guess2 = input("My second guess is: ")
 if Guess2 == computernum:
-    print ("Wow, Congrats you Win!")
+    print ("YOU WIN!")
     input (enter)
-    ("SystemExit")
+    sys.exit(0)
+
 else:
-    print ("Final Guess!")
-    Guess3 = input ("My Final Guess Is: ")
-if  Guess3 == computernum:
-    print ("Congrats you win!")
-    ("SystemExit")
+    print ("One last try, good luck!")
+
+Guess3 = input("My final guess is: ")
+if Guess3 == computernum:
+    print ("YOU WIN!")
+    input (enter)
+    sys.exit(0)
+
 else:
-    print ("Sorry, you lose the game!")
-computernum = input (computernum)
-print( "The computers number was "+computernum)
-input (enter)
-("SystemExit")
+    print ("Sorry, you didn't guess the correct number. You lost the game!")
+    computernum = str(computernum)
+    print ("The computers number was "+computernum)
+    time.sleep(2)
+    input (close)
+    sys.exit(0)
+    
+
     

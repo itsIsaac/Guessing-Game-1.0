@@ -11,9 +11,9 @@ close = ("You may now close the game.")
 
 
 print ("Hello, welcome to a guessing game!")
-print ("Guess a number between 1 - 100.")
+print ("Guess a number between 1 - 20.")
 
-computernum = random.randint(1,100)
+computernum = random.randint(1,20)
 
 Guess1 = input("My first guess is: ")
 if Guess1 == computernum:
